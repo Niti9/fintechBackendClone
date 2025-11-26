@@ -4,6 +4,7 @@ export async function getInfo(req, res) {
   try {
     const ids = req.query.ids || 1;
 
+    console.log("ids are :," ,ids);
     const data = await fetchJSON(
       `https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=${ids}`,
       {
@@ -11,6 +12,7 @@ export async function getInfo(req, res) {
       }
     );
 
+    console.log('data is ',data);
     res.json(data?.data || data);
   } catch (error) {
     res.status(500).json({ error: error.message });
