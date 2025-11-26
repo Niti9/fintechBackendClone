@@ -12,9 +12,9 @@ app.use(cors());
 app.use(express.json());
 
 // ROUTES
-app.use("fintech/api/info", infoRoutes);
-app.use("fintech/api/listings", listingsRoutes);
-app.use("fintech/api/tickers", tickersRoutes);
+app.use("/fintech/api/info", infoRoutes);
+app.use("/fintech/api/listings", listingsRoutes);
+app.use("/fintech/api/tickers", tickersRoutes);
 
 // ERROR HANDLER
 const PORT = process.env.PORT || 9000;
